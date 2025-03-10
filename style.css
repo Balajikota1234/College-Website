@@ -1,0 +1,309 @@
+*{
+    
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+    background-color: white;
+}
+/* styles for image sliding */
+.swiper{
+    width:100%;
+    margin: 0 auto;
+    height: 80vh;
+    z-index: 1;
+}
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}   
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 10px;
+}
+@media (max-width: 768px){
+    .swiper{
+        max-height: 70vh;
+        width:100%;
+       height: 40vh;
+        
+    }
+    .swiper-slide img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+    max-width: 90%;
+    margin: 4% auto;
+    background-color:aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
+}
+
+.container img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+span{
+    color: rgb(1, 63, 249);
+    font-size: 1.25rem;
+    padding-right: 2px;
+}
+.about-us img{
+    max-width: 350px;
+    height: auto;
+}
+
+.inf{
+    flex: 1;
+    max-width: 700px;
+}
+.inf h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: rgb(1, 63, 249);
+
+}
+.inf p, h2{
+  flex: 1;
+  text-align: left;
+  line-height: 1.6;
+}
+/*features section */
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.feature-box{
+    background: white;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
+    text-align: left;
+}
+
+.feature-box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.feature-box p {
+    font-size: 1rem;
+}
+.feature-box i{
+    font-size: 28px;
+    color: #1d4ed8
+}
+.features a{
+    text-decoration: none;
+    color:unset;
+    font-style: unset;
+    transition: transform 0.3s ease;
+}
+.features a:hover{
+    transform: scale(0.9);
+}
+/* programs and academics */
+.programs, .academics{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+ .academics h2, .s-features h2, .programs h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+.s-features h2{
+    text-align: center;
+}
+.academics h3, .feature-box h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* campus section*/
+.campus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
+}
+.info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+}
+.info div{
+    flex: 1;
+    text-align: left;
+    min-width: 300px;
+}
+.info p{
+    text-align: left;
+}
+.info img{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.campus h2, .join-us h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 27px;
+    color: rgb(1, 63, 249);
+}
+.campus h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.campus p{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+@media (max-width: 768px) {
+    .container{
+        width: 100%;
+        flex-direction: column;
+    }
+    .container img{
+        max-width: 100%;
+    }
+    /* Info Section */
+    .inf {
+        flex-direction: column;
+        text-align: center;
+    }
+    .inf p {
+        text-align: justify;
+        padding: 10px;
+    }
+
+    /* Campus Info Section */
+    .info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info img {
+        max-width: 100%;
+        
+    }
+    .campus p {
+        font-size: 1rem;
+    }
+    .features{
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-box {
+        width: 90%;
+        padding: 15px;
+        margin: auto;
+    }
+}
+.choose-us, .join-us{
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 90%;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.join-us{
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.choose-us h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+}
+.s-features {
+    padding: 40px 20px;
+    content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.f-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0 50px;
+    text-align: left;
+    max-width: 90%;
+    margin-left: 8%;
+    justify-content: center;
+}
+
+.f-box ul {
+    list-style-type: disc;
+    padding: 0;
+    width: 300px;
+    min-width: 250px;
+}
+
+.f-box ul li {
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #333;
+    position: relative;
+}
+
+.f-box ul li::marker {
+    color: rgb(1, 63, 249);
+    font-size: 1.5em;
+}
+/* Responsive: Convert to a single column on small screens */
+@media (max-width: 900px) {
+    .f-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+        margin-left: 0;
+    }
+
+    .f-box ul {
+        width: 100%; /* Make each list take full width */
+        max-width: 500px;
+    }
+}
