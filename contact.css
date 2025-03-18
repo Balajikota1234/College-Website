@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
 }
 .contact-header {
-    background-image: linear-gradient(rgba(13, 74, 136, 0.526), rgba(0, 51, 102, 0.858)), url("/images/Contact Header.png");
+    background-image: linear-gradient(rgba(13, 74, 136, 0.526), rgba(0, 51, 102, 0.858)), url("./Images/Contact Header.png");
   background-color: #0d4a88; /* Darker fallback color */
     background-repeat: no-repeat;
     background-size:cover;

@@ -9,7 +9,7 @@ body {
     background-color: #f9f9f9;
 }
 .about-header {
-    background-image: linear-gradient(rgba(13, 74, 136, 0.526), rgba(0, 51, 102, 0.858)), url('/Images/College\ Photo-1.jpg');
+    background-image: linear-gradient(rgba(13, 74, 136, 0.526), rgba(0, 51, 102, 0.858)), url('./Images/College\ Photo-1.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;

@@ -46,6 +46,7 @@ footer {
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 .footer-links ul li {
@@ -62,17 +63,23 @@ footer {
 .footer-links ul li a:hover {
     opacity: 1;
 }
-.footer-links
-
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
 .footer-contact p {
     font-size: 0.9rem;
     opacity: 0.8;
+    margin-top: 1px;
 }
 .footer-contact a{
     text-decoration: none;
     color: #93cbeb
 }
-
+.mail{
+    text-align: center;
+}
 .num{
     display: flex;
     gap: 10px;
@@ -84,10 +91,25 @@ footer {
     opacity: 0.9;
     transition: 0.3s;
 }
-
-.footer-social a:hover {
+.whatsapp:hover{
     opacity: 1;
-    color: #1d4ed8;
+    color: #06b039;
+}
+.facebook:hover {
+    opacity: 1;
+    color: rgb(1, 101, 225);
+}
+.insta:hover{
+    opacity: 1;
+    color: rgb(225, 48, 108);
+}
+.linkedin:hover{
+    opacity: 1;
+    color: rgb(10, 102, 194);
+}
+.youtube:hover{
+    opacity: 1;
+    color: rgb(255, 0, 0);
 }
 .footer-map iframe{
     max-width: 350px;
