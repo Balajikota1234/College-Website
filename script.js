@@ -43,7 +43,7 @@ fetch("header.html")
       })
       .catch(error=>console.error("Error loading header.",error));
 
-fetch("footer.html")
+fetch("footer.php")
       .then(response => response.text())
       .then(data=>{
 

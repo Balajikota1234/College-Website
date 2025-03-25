@@ -101,7 +101,13 @@ ul li::marker {
     object-fit: cover;
     margin-bottom: 10px;
 }
-
+.info a{
+    text-decoration: none;
+    color: rgb(1, 63, 249);
+}
+.info{
+    text-align: center;
+}
 .facilities{
     display: flex;
     flex-direction: column;

@@ -1,11 +1,39 @@
+<?php
+// Database connection settings (update with your Hostinger credentials)
+$host = "localhost";  // Default for Hostinger
+$user = "u563361941_sbei2005";  // Your Hostinger database username
+$pass = "Sribalaji@2005";  // Your Hostinger database password
+$dbname = "u563361941_college_db";  // Your database name
+
+// Connect to MySQL database
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+
+// Retrieve the current view count
+$result = $conn->query("SELECT view_count FROM view_counter WHERE id = 1");
+$row = $result->fetch_assoc();
+$views = $row['view_count'];
+
+// Increment the count
+$views++;
+
+// Update the count in the database
+$conn->query("UPDATE view_counter SET view_count = $views WHERE id = 1");
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>footer</title>
+    <title>Footer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
 </head>
 <body>
     
@@ -53,7 +81,7 @@
         </div>                                        
                                                       
         <div class="footer-bottom">                   
-            <p>© 2025 Sri Balaji Educational Institutions. All Rights Reserved.</p>
+            <p>© 2025 Sri Balaji Educational Institutions. All Rights Reserved. | Visitor Count: <strong><?php echo $views; ?></strong></p>
         </div>                                        
     </footer>                                         
 

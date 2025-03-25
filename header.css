@@ -322,3 +322,33 @@ body.fixed-nav-padding {
         display: block; /* Show menu icon on small screens */
     }
 }
+
+/* Marquee Wrapper */
+.marquee-wrapper {
+    width: 100%;
+    background: rgb(1, 63, 249); /* Deep Blue */
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Space between marquees */
+}
+
+/* Marquee Content */
+.marquee-content {
+    display: flex;
+    gap: 100px; /* Space between messages */
+    animation: marquee 60s linear infinite; /* Adjust speed */
+}
+span{
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+/* Marquee Animation */
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}

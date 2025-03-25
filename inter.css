@@ -82,7 +82,7 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
-    max-width: 370px;
+    max-width: 300px;
     text-align: center;
     padding: 10px 5px;
     transition: transform 0.3s ease;
