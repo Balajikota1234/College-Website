@@ -136,9 +136,11 @@
             <button type="button" onclick="submitForm()">Apply Now</button>
         </form>
     </section>
+
+    <div id="icons"></div>   
     <div id="footer"></div>
-    <script src="script.js"> </script>
-    <script>
+<script src="script.js"> </script>
+<script>
         let radio = `<input type='radio' id='${radioId}' name='course' value='${course}' required>`;
         function updateCourses() {
             let department = document.querySelector('input[name="department"]:checked')?.value;
@@ -300,6 +302,6 @@ function hideLoading() {
         loadingOverlay.remove();
     }
 }
-    </script>
+</script>
 </body>
 </html>    

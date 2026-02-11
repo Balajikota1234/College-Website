@@ -42,14 +42,24 @@ fetch("header.html")
          
       })
       .catch(error=>console.error("Error loading header.",error));
+      
+// script for adding icon.html
+fetch("icons.html")
+      .then(response => response.text())
+      .then(data=>{
 
+        document.getElementById("icons").innerHTML= data;
+      })
+      .catch(error=>console.error("Error loading icons.",error)); 
+
+// script for adding footer.html
 fetch("footer.php")
       .then(response => response.text())
       .then(data=>{
 
         document.getElementById("footer").innerHTML= data;
       })
-      .catch(error=>console.error("Error loading header.",error));  
+      .catch(error=>console.error("Error loading footer.",error));  
       
 // sliding functionalty
 var swiper = new Swiper(".mySwiper", {

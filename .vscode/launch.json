@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/inter.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/inter.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/index.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/index.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/demo.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/demo.html"
+        }
+    ]
+}
