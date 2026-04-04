@@ -351,6 +351,7 @@ textarea {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 700;
 }
+<<<<<<< HEAD
 
 /* Slide-up Animation */
 .slide-up {
@@ -395,6 +396,8 @@ textarea {
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
+=======
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa
 /* Custom Scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
   width: 3px; /* vertical scrollbar width */

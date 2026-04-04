@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "liveServer.settings.port": 5501
+=======
+    "liveServer.settings.multiRootWorkspaceName": "College WebPage"
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa
 }

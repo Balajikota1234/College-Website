@@ -384,6 +384,7 @@ span{
         max-width: 500px;
     }
 }
+<<<<<<< HEAD
 
 /* ==================== STATS COUNTER SECTION ==================== */
 .stats-section {
@@ -539,6 +540,8 @@ span{
     z-index: 2;
 }
 
+=======
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa
 /* Custom Scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
   width: 3px; /* vertical scrollbar width */
@@ -559,6 +562,7 @@ span{
   background: #0056b3; /* thumb hover color */
 }
 
+<<<<<<< HEAD
 /* Slide-up Animation */
 .slide-up {
     opacity: 0;
@@ -578,3 +582,5 @@ span{
 .features .slide-up:nth-child(4) { transition-delay: 0.3s; }
 .features .slide-up:nth-child(5) { transition-delay: 0.4s; }
 .features .slide-up:nth-child(6) { transition-delay: 0.5s; }
+=======
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa

@@ -252,6 +252,7 @@ h3, h4{
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0056b3; /* thumb hover color */
+<<<<<<< HEAD
 }
 
 /* Slide-up Animation */
@@ -270,3 +271,6 @@ h3, h4{
 .contact .slide-up:nth-child(1) { transition-delay: 0s; }
 .contact .slide-up:nth-child(2) { transition-delay: 0.2s; }
 .contact .slide-up:nth-child(3) { transition-delay: 0.4s; }
+=======
+}
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa

@@ -273,7 +273,10 @@ body {
 
 .company-box img:hover {
     transform: scale(1.1);
+<<<<<<< HEAD
     box-shadow: 0 6px 15px rgba(15, 103, 255, 0.4);
+=======
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa
 }
 /* Custom Scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
@@ -293,6 +296,7 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0056b3; /* thumb hover color */
+<<<<<<< HEAD
 }
 
 /* Slide-up Animation */
@@ -314,3 +318,6 @@ body {
 .features .slide-up:nth-child(4) { transition-delay: 0.3s; }
 .features .slide-up:nth-child(5) { transition-delay: 0.4s; }
 .features .slide-up:nth-child(6) { transition-delay: 0.5s; }
+=======
+}
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa

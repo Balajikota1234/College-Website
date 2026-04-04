@@ -144,6 +144,7 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0056b3; /* thumb hover color */
+<<<<<<< HEAD
 }
 
 /* Slide-up Animation */
@@ -167,3 +168,6 @@ body {
 .values .slide-up:nth-child(6) { transition-delay: 0.5s; }
 .values .slide-up:nth-child(7) { transition-delay: 0.6s; }
 .values .slide-up:nth-child(8) { transition-delay: 0.7s; }
+=======
+}
+>>>>>>> a87f94a7d3a0073ba078fa146f0dd7affbf731fa
