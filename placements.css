@@ -19,6 +19,46 @@ body {
     width: 100%;
     height: 50vh;
 }
+.header-overlay {
+    z-index: 1;
+}
+
+.placements-header h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease;
+}
+
+.placements-header h6 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: 0.95;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .about, .it-training, .defence-training{
     text-align: center;
     padding: 40px 20px;
@@ -67,14 +107,6 @@ body {
     padding: 40px 20px;
     width:90%;
     margin: auto;
-}
-.placements-header h2{
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;    
-} 
-.placements-header h6{
-    font-size: 1.2rem;  
 }
 .features{
     display: flex;
@@ -173,24 +205,112 @@ body {
 .companies {
     text-align: center;
     padding: 50px 5%;
+    overflow: hidden;
 }
+
+.companies h2 {
+    margin-bottom: 30px;
+}
+
+/* Container for both rows */
+.company-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual row styling */
 .company-box {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Space between images */
+    gap: 30px;
+    width: max-content;
 }
+
+/* First row - scrolls left (forward) */
+.company-box.scroll-left {
+    animation: scrollLeft 40s linear infinite;
+}
+
+/* Second row - scrolls right (backward) */
+.company-box.scroll-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Pause animation on hover */
+.company-box:hover {
+    animation-play-state: paused;
+}
+
 .company-box img {
-    width: 120px;  /* Adjust size */
-    height: 80px;  /* Adjust size */
+    width: 120px;
+    height: 80px;
     object-fit: contain;
     background: white;
     border-radius: 10px;
     padding: 10px;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(15, 103, 255, 0.277);
+    flex-shrink: 0;
 }
+
 .company-box img:hover {
     transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(15, 103, 255, 0.4);
 }
+/* Custom Scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 3px; /* vertical scrollbar width */
+  height: 8px; /* horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+  background: white; /* track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007bff; /* thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* thumb hover color */
+}
+
+/* Slide-up Animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for features and values */
+.features .slide-up:nth-child(1) { transition-delay: 0s; }
+.features .slide-up:nth-child(2) { transition-delay: 0.1s; }
+.features .slide-up:nth-child(3) { transition-delay: 0.2s; }
+.features .slide-up:nth-child(4) { transition-delay: 0.3s; }
+.features .slide-up:nth-child(5) { transition-delay: 0.4s; }
+.features .slide-up:nth-child(6) { transition-delay: 0.5s; }

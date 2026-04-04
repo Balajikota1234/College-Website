@@ -20,17 +20,19 @@
 <body>
     <div id="header"></div>
     <section class="degree-header">
+      <div class="header-overlay">
         <h2>Degree College</h2>
         <h6>Building Tomorrow's Professionals</h6>
+      </div>  
     </section>
-    <section class="about">
+    <section class="about slide-up">
         <h2>Excellence in Higher Education</h2>
         <p>Our degree college offers comprehensive undergraduate programs with state-of-the-art facilities and expert faculty. We focus on practical learning, skill development and career preparation to ensure our students excel in their chosen fields.</p>
     </section>
-    <section class="programs">
+    <section class="programs slide-up">
       <h2>Our Acadamic Programs</h2>
             <div class="values">
-                <div class="value-box">    
+                <div class="value-box slide-up">    
                     <h4>B.Sc Computer Science</h4>
                     <p>Advanced computer science program with hands-on programming and technology exposure.</p>
                         <ul>
@@ -40,7 +42,7 @@
                           <li>Web Technologies</li>
                         </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                     <h4>B.Sc Chemistry</h4>
                     <p>Comprehensive chemistry program with extensive laboratory work and research opportunities.</p>
                         <ul>
@@ -50,7 +52,7 @@
                           <li>Environmental & Pharmaceutical Chemistry</li>
                         </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                   <h4>B.Com Computers</h4>
                 <p>Modern commerce program integrated with computer applications and business technology.</p>
                 <ul>
@@ -60,7 +62,7 @@
                     <li>Entrepreneurship & Digital Marketing</li>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                   <h4>BCA</h4>
                 <p>Computer Applications program with focus with focus on software development and IT skills.</p>
                 <ul>
@@ -70,7 +72,7 @@
                     <li>Mobile App Development</li>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                     <h4>BBA</h4>
                 <p>Business Administration program focusing on management and entrepreneurial skills.</p>
                 <ul>
@@ -80,7 +82,7 @@
                    <li>Performance Analysis</li>
                 </ul>  
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                     <h4>Defence</h4>
                     <p>Special training for defence services with physical and academic preparation.</p>
                 <ul>
@@ -92,45 +94,45 @@
                 </div>
             </div>
     </section>
-    <div class="info">
+    <div class="info slide-up">
       <p><a href="https://apsche.ap.gov.in/sngl_major.php" target="_blank">Click here</a> for more info regrading courses and syllabus.</p>
     </div><br>
-    <section class="facilities">
+    <section class="facilities slide-up">
       <h2>Campus Facilities</h2>
         <div class="values">
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Dr Cmp Lab.png" alt="Computer Labs">   
               <h4>Computer Labs</h4>
               <p>Modern labs with high-speed internet and latest software.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Dr Lab.jpg" alt="Science Labs">
                 <h4>Science Labs</h4>
                 <p>Well-equipped Physics, and Chemistry laboratories.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Dr Lib.png" alt="Library">
                 <h4>Library</h4>
                 <p>Well-stocked library with books for research and study.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Hostel Accom.png" alt="Accommodation">
                 <h4>Hostel</h4>
                 <p>Comfortable and secure accommodation for outstation students.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Dr Ground.jpg" alt="Ground">
                   <h4>Training Ground</h4>
                   <p>Dedicated area for defence training with experienced coach.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Dr Gym.png" alt="Gym">
                   <h4>Fitness Center</h4>
                   <p>Equipped gym facility for defence aspirants and hostel students.</p>
             </div>
         </div>    
     </section>
-    <section class="toppers">
+    <section class="toppers slide-up">
     <section class="top 2025">
       <h2>Our 2025 Academic Year Toppers</h2>
       <div class="mtp">
@@ -178,7 +180,7 @@
         </div>
     </section>
     </section>
-    <section class="credits">
+    <section class="credits slide-up">
       <div>
         <p class="quote">“Your time is limited, so don't waste it living someone else's life. Have the courage to follow your heart and intuition.”</p>
         <p>— Steve Jobs</p>    
@@ -186,8 +188,34 @@
       <img src="./Images/SJ Image.jpg" alt="Steve Jobs">
     </section>
     <br><br><br><br>
-
+    
+  <div id="icons"></div>   
   <div id="footer"></div>
+
+  <!-- Slide-up Animation Script -->
+  <script>
+      // Intersection Observer for slide-up animations
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('active');
+              }
+          });
+      }, observerOptions);
+
+      document.addEventListener('DOMContentLoaded', () => {
+          const slideUpElements = document.querySelectorAll('.slide-up');
+          slideUpElements.forEach(element => {
+              observer.observe(element);
+          });
+      });
+  </script>
+
   <script src="script.js"> </script>
 </body>
 </html>        

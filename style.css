@@ -15,6 +15,7 @@ body {
     margin: 0 auto;
     height: 80vh;
     z-index: 1;
+    position: relative;
 }
 .swiper-slide {
     display: flex;
@@ -28,6 +29,67 @@ body {
     object-fit:cover;
     border-radius: 10px;
 }
+
+/* Carousel Overlay with Gradient */
+.carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    animation: fadeInDown 1s ease;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.carousel-subtitle {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px){
     .swiper{
         max-height: 70vh;
@@ -38,6 +100,15 @@ body {
     .swiper-slide img{
         width: 100%;
         height: 100%;
+    }
+    .carousel-title {
+        font-size: 2rem;
+    }
+    .carousel-subtitle {
+        font-size: 1rem;
+    }
+    .carousel-overlay {
+        padding: 30px 15px;
     }
 }
 .container{
@@ -313,3 +384,197 @@ span{
         max-width: 500px;
     }
 }
+
+/* ==================== STATS COUNTER SECTION ==================== */
+.stats-section {
+    padding: 40px 20px;
+    margin: 50px auto;
+    width: 90%;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    text-align: center;
+    color: white;
+    min-width: 200px;
+    flex: 1;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-box i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 10px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 30px;
+    }
+    .stat-box {
+        min-width: 150px;
+    }
+    .stat-box i {
+        font-size: 2.5rem;
+    }
+    .stat-number {
+        font-size: 3rem;
+    }
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+/* ==================== 3D TILT EFFECT FOR ACADEMIC PROGRAMS ==================== */
+.academics .feature-box {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+    will-change: transform;
+    background: white;
+}
+
+.academics .feature-box:hover {
+    box-shadow: 0 25px 50px rgba(1, 63, 249, 0.5);
+}
+
+/* Glare/Shine effect that follows mouse */
+.academics .feature-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 20%,
+        transparent 60%
+    );
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.academics .feature-box:hover::before {
+    opacity: 1;
+}
+
+/* Inner glow effect */
+.academics .feature-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(
+        circle,
+        rgba(1, 63, 249, 0.15) 0%,
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.academics .feature-box:hover::after {
+    opacity: 1;
+}
+
+/* Ensure content stays on top */
+.academics .feature-box i,
+.academics .feature-box h3,
+.academics .feature-box p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Custom Scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 3px; /* vertical scrollbar width */
+  height: 8px; /* horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+  background: white; /* track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007bff; /* thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* thumb hover color */
+}
+
+/* Slide-up Animation */
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Staggered animation for child elements */
+.features .slide-up:nth-child(1) { transition-delay: 0s; }
+.features .slide-up:nth-child(2) { transition-delay: 0.1s; }
+.features .slide-up:nth-child(3) { transition-delay: 0.2s; }
+.features .slide-up:nth-child(4) { transition-delay: 0.3s; }
+.features .slide-up:nth-child(5) { transition-delay: 0.4s; }
+.features .slide-up:nth-child(6) { transition-delay: 0.5s; }

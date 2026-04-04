@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 200vh;
+    min-height: 100vh;
 }
 .up-head{
     background-color: rgb(1, 63, 249);
@@ -334,6 +334,7 @@ body.fixed-nav-padding {
     display: flex;
     align-items: center;
     gap: 50px; /* Space between marquees */
+    cursor: default;
 }
 
 /* Marquee Content */
@@ -342,11 +343,19 @@ body.fixed-nav-padding {
     gap: 100px; /* Space between messages */
     animation: marquee 60s linear infinite; /* Adjust speed */
 }
-span{
+
+/* Pause animation on hover */
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Marquee span styling - ONLY for marquee */
+.marquee-content span{
     font-size: 13px;
     color: white;
     font-weight: bold;
 }
+
 /* Marquee Animation */
 @keyframes marquee {
     from { transform: translateX(100%); }

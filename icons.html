@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.whatsapp-wrapper {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    width: 45px;
+    height: 45px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    transition: transform 0.35s ease;
+}
+
+.whatsapp-float img {
+    width: 32px;
+}
+
+/* Message Bubble */
+.whatsapp-text {
+    background: #25D366; /* WhatsApp green */
+    color: #fff;        /* White text */
+    margin-right: 14px;
+    padding: 10px 16px;
+    border-radius: 22px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    opacity: 0;
+    transform: translateX(6px);
+    pointer-events: none;
+}
+
+/* Text typing effect */
+.whatsapp-text span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+/* Hover Effects */
+.whatsapp-wrapper:hover .whatsapp-float {
+    transform: translateX(-8px);
+}
+
+.whatsapp-wrapper:hover .whatsapp-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.whatsapp-wrapper:hover .whatsapp-text span {
+    animation: typing-fast 0.5s steps(14, end) forwards;
+}
+
+/* Faster, smoother typing */
+@keyframes typing-fast {
+    from { width: 0; }
+    to { width: 215px; }
+}
+
+.whatsapp-wrapper {
+    text-decoration: none;
+    cursor: pointer;
+}
+.call-wrapper {
+    position: fixed;
+    bottom: 90px; /* keeps it above WhatsApp */
+    right: 24px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Phone Button */
+.call-float {
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(10, 102, 194, 0.35);
+    transition: transform 0.35s ease;
+}
+
+/* Message Bubble */
+.call-text {
+    background: rgb(1, 63, 249);;
+    color: #fff;
+    margin-right: 14px;
+    padding: 10px 16px;
+    border-radius: 22px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 10px 25px rgba(10, 102, 194, 0.35);
+    opacity: 0;
+    transform: translateX(6px);
+    pointer-events: none;
+}
+
+/* Typing animation */
+.call-text span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+/* Hover effects */
+.call-wrapper:hover .call-float {
+    transform: translateX(-8px);
+}
+
+.call-wrapper:hover .call-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.call-wrapper:hover .call-text span {
+    animation: typing-fast-call 0.5s steps(14, end) forwards;
+}
+
+/* Fast typing */
+@keyframes typing-fast-call {
+    from { width: 0; }
+    to { width: 130px; }
+}
+</style>
+</head>
+<body>
+<div id="icons">    
+<!-- WhatsApp Floating Help Button -->
+<a href="https://wa.me/919866707299" 
+   target="_blank" 
+   class="whatsapp-wrapper"
+   aria-label="Chat with us on WhatsApp">
+
+    <div class="whatsapp-text">
+        <span>Hello! Tab to Start a Conversation...</span>
+    </div>
+
+    <div class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+</a>
+<!-- Phone Floating Help Button -->
+<a href="tel:+919866707299"
+   class="call-wrapper"
+   aria-label="Call us">
+
+    <div class="call-text">
+        <span>Call us for enquiries...</span>
+    </div>
+
+    <div class="call-float">
+        <img src="./Images/telephone.png" width="44px" alt="Phone">
+    </div>
+</a>
+</div>
+</body>
+</html>

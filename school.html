@@ -21,19 +21,21 @@
     <div id="header"></div>
 
     <section class="school-header">
+      <div class="header-overlay">
         <h2>School</h2>
         <h6>Nurturing young minds from Kindergarten to 10th Grade</h6>
+      </div>  
     </section>
 
-    <section class="about">
+    <section class="about slide-up">
         <h2>Excellence in Primary & Secondary Education</h2>
         <p>We provide comprehensive education from Kindergarten through 10th grade, fostering academic excellence and personal growth in a nurturing environment.</p>
     </section>
 
-    <section class="programs">
+    <section class="programs slide-up">
       <h2>Our Acadamic Programs</h2>
             <div class="values">
-                <div class="value-box">
+                <div class="value-box slide-up">
                   <i class="fa-solid fa-book"></i>   
                   <h4>Pre-Primary Education</h4>
                   <p>Classes from KG to UKG.</p>
@@ -44,7 +46,7 @@
                       <li>Motor Skills & Creativity</li>
                   </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                   <h4>Primary Education</h4>
                 <p>Classes from 1st to 5th.</p>
                 <ul>
@@ -55,7 +57,7 @@
                 </ul>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                  
                   <h4>Secondary Education</h4>
                 <p>Classes from 6th to 10th</p>
@@ -67,7 +69,7 @@
                 </ul>    
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                   
                   <h4>IIT</h4>
                 <p>A specialized program designed for students aiming for IIT-JEE preparation.</p>
@@ -78,7 +80,7 @@
                     <li>Competitive Exam Strategies</li>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                     
                     <h4>Abacus</h4>
                 <p>A brain development program improving calculation speed and concentration.</p>
@@ -89,7 +91,7 @@
                     <li>Interactive & Fun Learning Approach</li>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                     
                     <h4>Vedic Maths</h4>
                     <p>An ancient mathematical approach for faster calculations and problem-solving.</p>
@@ -100,7 +102,7 @@
                     <li>Competitive Exam Readiness</li>
                 </ul>
                 </div>
-                <div class="value-box">
+                <div class="value-box slide-up">
                   
                   <h4>Bhagavad Gita Classes</h4>
                   <p>A spiritual and philosophical program to understand the teachings of the Bhagavad Gita and apply them in daily life.</p>
@@ -113,40 +115,40 @@
               </div>
             </div>
             </section><br><br>
-    <section class="facilities">
+    <section class="facilities slide-up">
       <h2>Campus Facilities</h2><br><br>
         <div class="values">
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Digi Class.png" alt="Digital Classrooms">                 
               <h4>Digital Classrooms</h4>
                 <p>Interactive projector based classrooms and multimedia resources for enhanced learning.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/School Cmp Lab.png" alt="Computer Labs">             
               <h4>Computer Labs</h4>
               <p>Comprehensive computer education with hands-on experience in our modern labs.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/School Lib.png" alt="School Library">
                 <h4>Library</h4>
                 <p>Well-stocked library with books for research and study.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Hostel Accom-2.png" alt="Accommodation">
                 <h4>Hostel</h4>
                 <p>Comfortable and secure accommodation for outstation students.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Sankranti School.jpg" alt="Fest">
               <h4>Cultural Activities</h4>
                 <p>A program designed to nurture creativity, talent, and cultural awareness among students.</p>
             </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/Playtime School.png" alt="Play Ground">
               <h4>Play Ground</h4>
               <p>Engaging and Energetic activities that enhance cognitive skills, teamwork, coordination, and team spirit.</p>
           </div>
-            <div class="value-box">
+            <div class="value-box slide-up">
               <img src="./Images/School Bus-2.png" alt="Transportation">
                 
                 <h4>Transportation</h4>
@@ -155,7 +157,7 @@
         </div>    
     </section><br>
 
-    <section class="credits">
+    <section class="credits slide-up">
         <div>
           <p class="quote">“Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.”</p>
           <p>— Albert Schweitzer</p>    
@@ -163,8 +165,34 @@
         <img src="./Images/AS Image.jpg" alt="Albert Schweitzer">
     </section>
     <br><br><br><br>
-    
+
+    <div id="icons"></div>
     <div id="footer"></div>
+
+    <!-- Slide-up Animation Script -->
+    <script>
+        // Intersection Observer for slide-up animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideUpElements = document.querySelectorAll('.slide-up');
+            slideUpElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
     <script src="script.js"> </script>
 </body>
 </html>        
